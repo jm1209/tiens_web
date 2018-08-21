@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>配置管理</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label" id="valueType">value 类型</label>
+        <div class="layui-input-block">
+            <select name="cogImgType" class="cogImgType" lay-filter="cogImgType">
+                <option value="0">文本</option>
+                <option value="1">图片</option>
+                <option value="2">文件</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item keyImg" style="display: none">
+        <label class="layui-form-label">
+            <i class="value">value</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-inline">
+            <div class="layui-upload-drag uploadImg" id="uploadImg">
+                <div class="upload-wrapper">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+                <div class="showImg">
+                    <img src="" width="100%" height="100%">
+                    <div class="layui-icon closeImg">&#xe640;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-xs12 keyText">
+        <label class="layui-form-label">
+            <i class="value">value</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogUrl" name="cogUrl" lay-filter="required" placeholder="请输入value">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-xs12 keyFile">
+        <label class="layui-form-label">
+            <i class="value">value</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <div class="layui-btn layui-btn-sm" id="cogUoload">上传文件</div>
+            <p class="fileName layui-inline fileShow"></p>
+            <div class="layui-btn layui-btn-sm layui-btn-normal fileShow" id="cogDown">下载</div>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-col-xs12">
+        <label class="layui-form-label">
+            <i id="key">key</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogTypeId" name="cogTypeId" lay-verify="required"
+                   placeholder="请输入key">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">
+            <i id="name">配置名称</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogName" name="cogName" lay-verify="required" placeholder="请输入配置名称">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">
+            <i id="des">描述</i>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogRemark" name="cogRemark" lay-verify="required" placeholder="请输入描述">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">
+            <i id="columeOne">扩展字段1</i>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogExtendOne" name="cogExtendOne">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">
+            <i id="columntwo">扩展字段2</i>
+        </label>
+        <div class="layui-input-block">
+            <input maxlength="30" type="text" class="layui-input cogExtendTwo" name="cogExtendTwo">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="magb15 layui-col-md4 layui-col-xs12">
+            <label class="layui-form-label" id="status">配置状态</label>
+            <div class="layui-input-block cogStatus">
+                <input type="radio" name="cogStatus" value="1" title="有效" checked>
+                <input type="radio" name="cogStatus" value="0" title="无效">
+            </div>
+        </div>
+    </div>
+    <div class="modleBtn">
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-filter="addOrEdit" lay-submit id="submit">提交</button>
+            <button class="layui-btn cancel">取消</button>
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/common/language.js"></script>
+<script src="../../../js/system_setup/config/configAdd.js"></script>
+</body>
+</html>

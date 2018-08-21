@@ -1,0 +1,128 @@
+* {
+	margin: 0 auto;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	color: #666;
+}
+.ves {
+	width: 100%;
+	height: 100%;
+	.search {
+		width: 100%;
+		height: 50px;
+		display: flex;
+		margin-top: 10px;
+		border-bottom: 1px solid #ddd;
+		.item {
+			flex: 1;
+			padding: 0 8px;
+			input {
+				border-radius: 5px;
+			}
+		}
+	}
+	.btnList {
+		width: 100%;
+		height: 50px;
+		box-sizing: border-box;
+		padding: 10px 10px 0;
+		.item {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+	.btnList:last-child {
+		content: "";
+		clear: both;
+	}
+	.table {
+		width: 100%;
+		height: calc( 100% - 180px );
+		line-height: 40px;
+		text-align: center;
+		margin-top: 10px;
+		.item {
+			border-bottom: 1px solid #e6e6e6;
+			border-right: 1px solid #e6e6e6;
+			box-sizing: border-box;
+
+		}
+		.head {
+			width: 100%;
+			height: 40px;
+			display: flex;
+			background: #f2f2f2;
+			.item {
+				flex: 1;
+				/*float: left;*/
+			}
+			.item:last-child {
+				flex: 1.5;
+				box-sizing: border-box;
+				padding: 0 3px;
+			}
+		}
+		.list {
+			width: 100%;
+			height: calc( 100% - 40px );
+			overflow: scroll;
+			.line {
+				width: 100%;
+				height: 40px;
+				display: flex;
+				overflow: hidden;
+				transition: all ease 0.3s;
+				.item {
+					flex: 1;
+					overflow: hidden;
+				}
+				.operation {
+					flex: 1.5;
+					display: flex;
+					box-sizing: border-box;
+					padding: 0 3px;
+					.btn {
+						flex: 1;
+						margin-top: 9px;
+					}
+				}
+			}
+			.line:hover {
+				background: #f2f2f2;
+			}
+		}
+	}
+	.page {
+		text-align: center;
+	}
+	/*.table {
+		width: 100%;
+		border-top: 1px solid #999;
+		.title {
+			width: 100%;
+			height: 40px;
+			display: flex;
+			.item {
+				flex: 1;
+			}
+		}
+		.list {
+			width: 100%;
+			.line {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				display: flex;
+				.item {
+					flex: 1;
+				}
+				.operation {
+					width: 
+				}
+			}
+		}
+	}*/
+}

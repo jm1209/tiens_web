@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>短信模板</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"  />
+    <link rel="stylesheet" href="../../../css/public.css"  />
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label templename">
+                <span>模板名称</span>
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="text" class="layui-input smsTemplatelTitle" name="smsTemplatelTitle" lay-verify="required" placeholder="请输入模板名称">
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 layui-col-xs12">
+            <label class="layui-form-label type">
+                <span>类型</span>
+            </label>
+            <div class="layui-input-block smsStatus">
+                <select disabled name="smsType" lay-filter="smsType" class="smsType">
+                    <option value="">请选择类型</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 layui-col-xs12" style="position: relative">
+            <label class="layui-form-label isenabled">是否启用</label>
+            <div class="layui-input-block smsStatus smsStatusisenbled">
+
+            </div>
+            <div style="position: absolute;width: 100%;height: 100%;top: 0"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label content">
+                <span>模板内容</span>
+            </label>
+            <div class="layui-input-block">
+                <textarea disabled placeholder="请输入内容" class="layui-textarea smsTemplateContent"></textarea>
+            </div>
+        </div>
+
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/sms_setup/smsTemplate/smsTemplateAdd.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+.uploadImgSize {
+    line-height: 30px;
+}
+
+.banView {
+    margin-top: 10px;
+    border-color: #e6e6e6;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    background: 0 0;
+    padding: 10px;
+}
+
+.banView:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.banner {
+    width: 92px !important;
+    height: 92px;
+    border: 1px solid #eee;
+    color: #eee;
+    font-size: 50px;
+    text-align: center;
+    line-height: 92px;
+    cursor: pointer;
+    float: left;
+}
+
+.layui-upload-img {
+    display: inline-block;
+    position: relative;
+}
+
+.banCloseImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+    color: #009688;
+    cursor: pointer;
+}
+
+.banBox {
+    float: left;
+}
+
+.layui-upload-img {
+    width: 183px;
+}
+.txt{
+    margin-top: 5px;
+}
+.layui-btn-sm{
+    margin-top: 5px;
+}
+.layui-table td{
+    text-align: center;
+}

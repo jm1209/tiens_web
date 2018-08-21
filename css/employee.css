@@ -1,0 +1,6 @@
+.screen-title, .screen-name, .screen-phone, .screen-status {
+    line-height: 40px;
+}
+.screen-title {
+    color: #000;
+}

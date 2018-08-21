@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分统计</title>
+    <link rel="stylesheet" href="../../../css/iconfont.css" />
+    <link rel="stylesheet" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../css/public.css" />
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="content-title-nav">
+            <div class="fl">
+                <span class="titleleft">积分统计</span>
+            </div>
+            <div class="fr otherDate">
+                <input type="number" class="dateNumber" placeholder="自定义天数">
+                <button type="button" class="btn searchBtn">搜索</button>
+            </div>
+            <div class="fr">
+                <ul class="selectDate">
+                    <li class="active week">近7天</li>
+                    <li class="month">近30天</li>
+                    <li class="other">其他</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-info">
+            <ul class="infolist">
+                <li>
+                    <div class="infoleft nav1"></div>
+                    <div class="centertext">
+                        <p class="user-analysis frozen">冻结数量</p>
+                        <div class="user-amount amountcolor1"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="infoleft nav2"></div>
+                    <div class="centertext">
+                        <p class="user-analysis grant">发放数量</p>
+                        <div class="user-amount amountcolor2"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="infoleft nav3"></div>
+                    <div class="centertext">
+                        <p class="user-analysis sign">签到数量</p>
+                        <div class="user-amount amountcolor3"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="infoleft nav4"></div>
+                    <div class="centertext">
+                        <p class="user-analysis invite">邀请数量</p>
+                        <div class="user-amount amountcolor4"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="infoleft nav5"></div>
+                    <div class="centertext">
+                        <p class="user-analysis shiftTo">转入数量</p>
+                        <div class="user-amount amountcolor5"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="infoleft nav6"></div>
+                    <div class="centertext">
+                        <p class="user-analysis turnOut">转出数量</p>
+                        <div class="user-amount amountcolor6"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="chart" style="width: 100%;height:450px;"></div>
+    </div>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/echarts.min.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/integral_setup/count/count.js"></script>
+</body>
+</html>

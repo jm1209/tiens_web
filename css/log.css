@@ -1,0 +1,9 @@
+.screen-ip, .screen-interface, .screen-logTime, .screen-ordType {
+    line-height: 40px;
+}
+.screen-thirdInterface,.screen-thirdStatus,.screen-thridRequest,.screen-thirdResponse,.screen-service{
+    line-height: 40px;
+}
+.screen-errorInterface,.screen-errorInterfaceName,.screen-errorRequestTime,.screen-errorType{
+    line-height: 40px;
+}

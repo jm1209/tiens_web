@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<meta charset="utf-8"/>
+	<title>模版布局编辑器</title>
+  <link rel="stylesheet" href="../../../css/iconfont.css" />
+  <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../css/layoutEdit.css"/>
+</head>
+<body>
+	<div class="hint">
+		左侧为布局预览，右侧为可拖入的组件，每个组件可重复多次拖入，可随意拖动（拖出=删除，拖动=改变顺序，拖入=添加到指定顺序）
+	</div>
+	<div class="container">
+		<div class="preview event_preview">
+			
+		</div>	
+		<div class="component">
+			<div class="title">
+				可用组件
+			</div>
+			<div class="list event_component_list">
+				<div class="item event_component">
+					<div class="title">图片单图</div>
+				</div>
+				<div class="item event_component">
+					<div class="title">图片轮播</div>
+				</div>
+				<div class="item event_component">
+					<div class="title">2*5图文栏目</div>
+				</div>
+				<div class="item event_component">
+					<div class="title">2*N竖向商品展示</div>
+				</div>
+				<div class="item event_component">
+					<div class="title">横向滚动商品展示</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script type="text/javascript">
+	layui.use(['form', 'layer', "jquery", "upload", "laydate", 'laytpl', 'laypage' ], function () {
+		var $ = layui.jquery
+
+		var previewList = [];
+
+		var fn_card = function ( argv ) {
+			this.x = 0
+			this.y = 0
+			this.w = 0
+			this.h = 0
+			this.disX = 0
+			this.disY = 0
+			this.resourceEl = argv.el
+			this.resourceEl_title = $ ( this.resourceEl ).find ( '.title' )
+			this.el = {}
+			this.el_title = {}
+			this.status = false
+			var _this = this
+
+			this.resourceEl.style.top = argv.index * 40 + 'px'		
+
+			this.resourceEl_title.mousedown ( function ( ev ) {
+				_this.el = $ ( _this.resourceEl ).clone ()
+
+				_this.el_title = $ ( _this.el ).find ( '.el_title' )
+				$ ( '.event_component_list' ).append ( _this.el )
+				_this.status = true
+				_this.x = $ ( this ).parent ().offset ().left
+				_this.y = $ ( this ).parent ().offset ().top
+				_this.disX = ev.clientX - _this.x
+				_this.disY = ev.clientY - _this.y
+				$ ( _this.el ).css ({
+					left: _this.x,
+					top: _this.y,
+					zIndex: 10,
+					opacity: 0.8,
+					position: 'fixed'
+				})
+			})
+			// $ ( this.el ).mouseup ( function () {
+				// _this.status = false
+			// })
+			$ ( document ).mousemove ( function ( ev ) {
+				// console.log ( ev.clientX, ev.clientY );
+				if ( _this.status ) {
+					_this.x = ev.clientX
+					_this.y = ev.clientY
+					$ ( _this.el ).css ({
+						left: _this.x - _this.disX,
+						top: _this.y - _this.disY
+					})
+				}
+			})
+			$ ( document ).mouseup ( function ( ev ) {
+				_this.status = false
+				var prevL = $ ( '.event_preview' ).offset ().left,
+						prevR = $ ( '.event_preview' ).offset ().left + $ ( '.event_preview' ).width (),
+						prevT = $ ( '.event_preview' ).offset ().top,
+						prevB = $ ( '.event_preview' ).offset ().top + $ ( '.event_preview' ).height ()
+				if ( ev.clientX < prevL || ev.clientX > prevR || ev.clientY < prevT || ev.clientY > prevB ) {
+					$ ( _this.el ).css ({
+						top: $ ( _this.resourceEl ).offset ().top,
+						left: $ ( _this.resourceEl ).offset ().left,
+						transition: 'all ease 0.3s'
+					})
+					$ ( _this.el ).on ( 'mozTransitionEnd', function () {
+						$ ( _this.el ).remove ()
+					})
+				}
+			})
+		}
+
+		$ ( '.event_component' ).each ( function ( index, item ) {
+			new fn_card({
+				el: item,
+				index: index
+			})
+		})
+	})
+</script>
+</html>

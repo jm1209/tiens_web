@@ -1,0 +1,110 @@
+* {
+  margin: 0 auto; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #666; }
+
+.ves {
+  width: 100%;
+  height: 100%;
+  /*.table {
+  	width: 100%;
+  	border-top: 1px solid #999;
+  	.title {
+  		width: 100%;
+  		height: 40px;
+  		display: flex;
+  		.item {
+  			flex: 1;
+  		}
+  	}
+  	.list {
+  		width: 100%;
+  		.line {
+  			width: 100%;
+  			height: 40px;
+  			line-height: 40px;
+  			display: flex;
+  			.item {
+  				flex: 1;
+  			}
+  			.operation {
+  				width: 
+  			}
+  		}
+  	}
+  }*/ }
+  .ves .search {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: 10px;
+    border-bottom: 1px solid #ddd; }
+    .ves .search .item {
+      flex: 1;
+      padding: 0 8px; }
+      .ves .search .item input {
+        border-radius: 5px; }
+  .ves .btnList {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px 10px 0; }
+    .ves .btnList .item {
+      float: left;
+      margin-right: 10px; }
+  .ves .btnList:last-child {
+    content: "";
+    clear: both; }
+  .ves .table {
+    width: 100%;
+    height: calc( 100% - 180px );
+    line-height: 40px;
+    text-align: center;
+    margin-top: 10px; }
+    .ves .table .item {
+      border-bottom: 1px solid #e6e6e6;
+      border-right: 1px solid #e6e6e6;
+      box-sizing: border-box; }
+    .ves .table .head {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      background: #f2f2f2; }
+      .ves .table .head .item {
+        flex: 1;
+        /*float: left;*/ }
+      .ves .table .head .item:last-child {
+        flex: 1.5;
+        box-sizing: border-box;
+        padding: 0 3px; }
+    .ves .table .list {
+      width: 100%;
+      height: calc( 100% - 40px );
+      overflow: scroll; }
+      .ves .table .list .line {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        overflow: hidden;
+        transition: all ease 0.3s; }
+        .ves .table .list .line .item {
+          flex: 1;
+          overflow: hidden; }
+        .ves .table .list .line .operation {
+          flex: 1.5;
+          display: flex;
+          box-sizing: border-box;
+          padding: 0 3px; }
+          .ves .table .list .line .operation .btn {
+            flex: 1;
+            margin-top: 9px; }
+      .ves .table .list .line:hover {
+        background: #f2f2f2; }
+  .ves .page {
+    text-align: center; }
+
+/*# sourceMappingURL=merchantList.css.map */

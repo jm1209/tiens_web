@@ -1,0 +1,155 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>商家</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../css/public.css" />
+    <link rel="stylesheet" href="../../../css/merlistAdd.css" />
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label">
+                商家名称
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopName " name="shopName" lay-verify="required" placeholder="请输入商家名称"/>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <label class="layui-form-label">
+                管理员
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input latAndLon"  name="latAndLon" lay-verify="required" placeholder="输入商家管理员"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label">
+                联系电话
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopMobile" name="shopMobile" lay-verify="required|phone" placeholder="请输入联系电话"/>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <label class="layui-form-label">
+                联系地址
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopAddress" name="shopAddress"  placeholder="请输入联系地址"/>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+           <div class="layui-col-md4">
+               <label class="layui-form-label">
+                   创建人
+                   <span class="layui-badge-dot"></span>
+               </label>
+               <div class="layui-input-block">
+                   <input type="text" class="layui-input shopPointNumber" disabled name="shopPointNumber" placeholder="请输入创建人"/>
+               </div>
+           </div>
+            <div class="layui-col-md4">
+                <label class="layui-form-label">
+                    创建时间
+                    <span class="layui-badge-dot"></span>
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input shopShareCount"  disabled  name="shopShareCount" placeholder="请输入创建时间"/>
+                </div>
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="setUp">商家标签</span>
+            </label>
+            <div class="tagBox layui-input-block">
+                <ul class="tagList">
+
+                </ul>
+                <div class="memAdd layui-icon">&#xe654;</div>
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4">
+            <label class="layui-form-label">
+                <span class="classify">运费模板</span>
+            </label>
+            <div class="layui-input-block">
+                <select name="shopBusinessHour" lay-filter="shopBusinessHour" class="shopBusinessHour">
+
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">
+                    店铺logo
+                    <span class="layui-badge-dot"></span>
+                </label>
+                <div class="layui-inline">
+                    <div class="layui-upload-drag uploadImg" id="event_upload_logo">
+                        <div class="upload-wrapper">
+                            <i class="layui-icon"></i>
+                            <p>点击上传，或将文件拖拽到此处</p>
+                        </div>
+                        <div class="showImg">
+                            <img src="" width="100" height="100"/>
+                            <div class="layui-icon closeImg">&#xe640;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uploadImgSize layui-inline">图片最佳尺寸为 <b>200 * 200</b>像素</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    商家资质
+                    <span class="layui-badge-dot"></span>
+                </label>
+                <div class="layui-inline">
+                    <div class="layui-upload-drag uploadImg" id="event_upload_aptitude">
+                        <div class="upload-wrapper">
+                            <i class="layui-icon"></i>
+                            <p>点击上传，或将文件拖拽到此处</p>
+                        </div>
+                        <div class="showImg">
+                            <img src="" width="100" height="100"/>
+                            <div class="layui-icon closeImg">&#xe640;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uploadImgSize layui-inline">图片最佳尺寸为 <b>200 * 200</b>像素</div>
+            </div>
+        </div>
+
+        <div class="magb15 layui-form-item layui-col-md8">
+            <label class="layui-form-label">商家介绍</label>
+            <div class="layui-input-block" id="shopDetail">
+                <script id="editor" type="text/plain"></script>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-row layui-col-xs12 seeBtn">
+            <div class="layui-input-block">
+                <button class="layui-btn submit"  lay-submit lay-filter="addOrEdit" >提交</button>
+                <button class="layui-btn reset" type="reset">重置</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/language.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../ueditor/ueditor.config.js"></script>
+<script src="../../../ueditor/ueditor.all.js"></script>
+<script src="../../../ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="../../../js/merchant_setup/merchantList/merchantListAdd.js"></script>
+<script src="../../../js/common/ueurl.js"></script>
+</html>

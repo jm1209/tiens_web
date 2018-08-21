@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>软文信息</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div class="magb15 layui-col-md4">
+        <label class="layui-form-label">
+            <span class="type">软文类型</span>
+            <i class="layui-badge-dot"></i>
+        </label>
+        <div class="layui-input-block">
+            <select name="infTypeId" lay-filter="infTypeId" class="infTypeId" lay-verify="required">
+
+
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label">
+            <span class="title">软文标题</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input infTitle" name="infTitle" lay-verify="required" placeholder="请输入软文标题">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md8">
+        <label class="layui-form-label desc">软文摘要</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea infDescription"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md8 editor">
+        <label class="layui-form-label text">
+            <span>正文</span>
+            <i class="layui-badge-dot"></i>
+        </label>
+        <div class="layui-input-block" id="infDetail">
+            <script id="editor" type="text/plain"></script>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-row layui-col-xs12 see">
+        <div class="layui-input-block">
+            <button class="layui-btn submit" lay-submit lay-filter="addOrEdit">提交</button>
+            <button class="layui-btn reset" type="reset">重置</button>
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/language.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../ueditor/ueditor.config.js"></script>
+<script src="../../../ueditor/ueditor.all.js"></script>
+<script src="../../../ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="../../../js/news_setup/newsSoft/newsSoftAdd.js"></script>
+<script src="../../../js/common/ueurl.js"></script>
+</body>
+</html>

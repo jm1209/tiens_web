@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>活动分类</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../css/public.css" />
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label classifyname">
+                <i>分类名称</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input actCategoryName" name="actCategoryName" lay-verify="required" placeholder="请输入分类名称">
+            </div>
+        </div>
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label sequence">
+                <i>分类排序</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="number" class="layui-input actSeq" name="actSeq" lay-verify="required" placeholder="请输入分类排序">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label classiamge">
+                <i>分类图片</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-inline">
+                <div class="layui-upload-drag uploadImg" id="uploadImg">
+                    <div class="upload-wrapper">
+                        <i class="layui-icon"></i>
+                        <p>点击上传，或将文件拖拽到此处</p>
+                    </div>
+                    <div class="showImg">
+                        <img src="" width="125" height="125">
+                        <div class="layui-icon closeImg">&#xe640;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="uploadImgSize layui-inline">图片最佳尺寸为 <b>190 * 190</b>像素</div>
+        </div>
+        <div class="magb15 layui-form-item layui-col-md3">
+            <label class="layui-form-label">是否启用</label>
+            <div class="layui-input-block actStatus">
+
+            </div>
+        </div>
+        <div class="modleBtn">
+            <div class="layui-form-item">
+                <button class="layui-btn submit" lay-filter="addOrEdit" lay-submit>提交</button>
+                <button class="layui-btn cancel">取消</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/activity_setup/activityClassify/activityClassifyAdd.js"></script>
+</body>
+</html>

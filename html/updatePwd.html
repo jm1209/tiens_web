@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>修改密码</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/public.css"/>
+</head>
+<body class="childrenBody">
+    <form class="layui-form layui-row changePwd">
+        <div class="layui-col-xs12 layui-col-sm6 layui-col-md6">
+            <div class="layui-form-item">
+                <label class="layui-form-label name">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" id="username" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label oldPwd">旧密码</label>
+                <div class="layui-input-block">
+                    <input type="password" placeholder="请输入旧密码" lay-verify="required" class="layui-input" name="oldPwd">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label newPwd">新密码</label>
+                <div class="layui-input-block">
+                    <input type="password" placeholder="请输入新密码" lay-verify="required|newPwd" class="layui-input" name="newPwd">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label okPwd">确认密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="okPwd" placeholder="请输入确认密码" lay-verify="required|confirmPwd" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn change" lay-submit lay-filter="changePwd">立即修改</button>
+                    <button class="layui-btn layui-btn-primary reset">重置</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script src="../js/common/language.js"></script>
+    <script src="../js/common/base.js"></script>
+    <script src="../js/updatePwd.js"></script>
+</body>
+</html>

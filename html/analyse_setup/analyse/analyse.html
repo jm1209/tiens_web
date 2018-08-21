@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商家订单分析</title>
+    <!--<link rel="stylesheet" href="../../../css/iconfont.css"/>-->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_676158_50nboo1nbp6.css">
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/analyse.css">
+</head>
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote quoteBox">商城订单分析</blockquote>
+
+    <div class="content-info">
+        <ul class="infolist">
+            <li>
+                <div class="infoleft nav1"></div>
+                <div class="centertext">
+                    <p class="user-analysis">新增订单数</p>
+                    <div class="user-amount amountcolor1">111</div>
+                </div>
+            </li>
+            <li>
+                <div class="infoleft nav2"></div>
+                <div class="centertext">
+                    <p class="user-analysis">已支付数</p>
+                    <div class="user-amount amountcolor2">111</div>
+                </div>
+            </li>
+            <li>
+                <div class="infoleft nav3"></div>
+                <div class="centertext">
+                    <p class="user-analysis">累计金额</p>
+                    <div class="user-amount amountcolor3">111</div>
+                </div>
+            </li>
+            <li>
+                <div class="infoleft nav4"></div>
+                <div class="centertext">
+                    <p class="user-analysis">累计积分</p>
+                    <div class="user-amount amountcolor4">111</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-collapse" lay-accordion>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">7日订单指标</h2>
+            <div class="layui-colla-content layui-show">
+                <div class="l-charts">
+                    <h3>各项指标</h3>
+                    <p>订单总数：<span>10</span></p>
+                    <p>已付款：<span>10</span></p>
+                    <p>待付款：<span>10</span></p>
+                    <p>作废：<span>10</span></p>
+                    <p>金额：<span>10</span></p>
+                    <p>积分：<span>10</span></p>
+                </div>
+                <div class="r-charts">
+                    <div id="weekChart" class="charts"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">15日订单指标</h2>
+            <div class="layui-colla-content">
+                <div class="l-charts">
+                    <h3>各项指标</h3>
+                    <p>订单总数：<span>10</span></p>
+                    <p>已付款：<span>10</span></p>
+                    <p>待付款：<span>10</span></p>
+                    <p>作废：<span>10</span></p>
+                    <p>金额：<span>10</span></p>
+                    <p>积分：<span>10</span></p>
+                </div>
+                <div class="r-charts">
+                    <div id="halfChart" class="charts"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">30日订单指标</h2>
+            <div class="layui-colla-content">
+                <div class="l-charts">
+                    <h3>各项指标</h3>
+                    <p>订单总数：<span>10</span></p>
+                    <p>已付款：<span>10</span></p>
+                    <p>待付款：<span>10</span></p>
+                    <p>作废：<span>10</span></p>
+                    <p>金额：<span>10</span></p>
+                    <p>积分：<span>10</span></p>
+                </div>
+                <div class="r-charts">
+                    <div id="monthChart" class="charts"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="order-table">
+        <blockquote class="layui-elem-quote quoteBox">
+            <div class="layui-inline">
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input searchTime" placeholder="选择时间" />
+                </div>
+                <a class="layui-btn search_btn" data-type="reload">搜索</a>
+            </div>
+
+            <div class="layui-btn layui-btn-normal layui-btn-sm printing">打印表格</div>
+        </blockquote>
+
+        <table id="tableList" lay-filter="tableList"></table>
+    </div>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/echarts.min.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/analyse_setup/analyse/analyse.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>积分获取规则</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label">
+                <i class="num">积分数量</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input type="number" class="layui-input ruleCount" name="ruleCount" lay-verify="number|integer" placeholder="请输入积分数量">
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 layui-col-xs12">
+            <label class="layui-form-label">
+                <i class="grade">会员等级</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <select name="ruleGradeId" lay-filter="ruleGradeId" class="ruleGradeId" lay-verify="required">
+
+                </select>
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 layui-col-xs12">
+            <label class="layui-form-label">
+                <i class="type">类型</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <select name="ruleType" lay-filter="ruleType" class="ruleType" lay-verify="required">
+                    <option value="">选择</option>
+                    <option value="0">拉新</option>
+                    <option value="1">消费</option>
+                </select>
+            </div>
+        </div>
+        <div class="modleBtn">
+            <div class="layui-form-item">
+                <button class="layui-btn submit" lay-filter="addOrEdit" lay-submit>提交</button>
+                <button class="layui-btn cancel">取消</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/integral_setup/rule/ruleAdd.js"></script>
+</body>
+</html>

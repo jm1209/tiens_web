@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>资讯分类</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label">
+                分类名称
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="text" class="layui-input categoryName" maxlength="4" name="categoryName" lay-verify="required" placeholder="请输入分类名称">
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 layui-col-xs12">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block categoryStatus">
+                <input disabled type="radio" name="categoryStatus" value="1" title="启用" checked>
+                <input disabled type="radio" name="categoryStatus" value="0" title="未启用">
+            </div>
+        </div>
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/news_setup/newsClassify/newsClassifyAdd.js"></script>
+</body>
+</html>

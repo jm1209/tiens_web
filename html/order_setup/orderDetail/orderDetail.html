@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+    <link rel="stylesheet" href="../../../css/orderDetail.css"/>
+</head>
+<body class="childrenBody">
+<blockquote class="layui-elem-quote">
+    <h3>收货信息</h3>
+</blockquote>
+<div class="magb15 layui-col-md2">
+    <label class="layui-form-label">收件人：</label>
+    <div class="layui-input-block">李三</div>
+</div>
+<div class="magb15 layui-col-md3">
+    <label class="layui-form-label">联系电话：</label>
+    <div class="layui-input-block">13155103288</div>
+</div>
+<div class="magb15 layui-col-md6">
+    <label class="layui-form-label">收货地址：</label>
+    <div class="layui-input-block">中国江苏省苏州市高新区竹园路209号c4048</div>
+</div>
+
+<hr class="layui-bg-green">
+
+<div class="layui-form-item">
+    <label class="layui-form-label">订单号：</label>
+    <div class="layui-input-block">465619816513913915</div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-col-md2">
+        <label class="layui-form-label">订单状态：</label>
+        <div class="layui-input-block green">待付款</div>
+    </div>
+    <div class="layui-col-md4 layui-form">
+        <label class="layui-form-label">订单操作：</label>
+        <div class="layui-input-block">
+            <select name="" lay-filter="" class="" lay-verify="required">
+                <option value="">请选择</option>
+                <option value="">取消订单</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-col-md3">
+        <label class="layui-form-label">商品数量：</label>
+        <div class="layui-input-block">9999</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">支付类型：</label>
+        <div class="layui-input-block">组合支付</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">支付方式：</label>
+        <div class="layui-input-block">钱包支付</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">流水号：</label>
+        <div class="layui-input-block">xxxxxxxxxxxxxx</div>
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-col-md3">
+        <label class="layui-form-label">实际付款金额：</label>
+        <div class="layui-input-block">9999</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">余额支付金额：</label>
+        <div class="layui-input-block">组合支付</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">积分支付金额：</label>
+        <div class="layui-input-block">钱包支付</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">邮费：</label>
+        <div class="layui-input-block">xxxxxxxxxxxxxx</div>
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-col-md3">
+        <label class="layui-form-label">配送方式：</label>
+        <div class="layui-input-block">快递</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">下单时间：</label>
+        <div class="layui-input-block">2018-08-12 21:08:00</div>
+    </div>
+    <div class="layui-col-md3">
+        <label class="layui-form-label">支付时间：</label>
+        <div class="layui-input-block">2018-08-12 21:08:00</div>
+    </div>
+</div>
+
+<div class="goodsList">
+    <table id="tableList" lay-filter="tableList"></table>
+</div>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/language.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/order_setup/orderDetail/orderDetail.js"></script>
+</body>
+</html>

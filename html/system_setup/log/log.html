@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>日志管理</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../css/public.css" />
+    <link rel="stylesheet" href="../../../css/iconfont.css" />
+    <link rel="stylesheet" href="../../../css/log.css" />
+</head>
+<body class="childrenBody">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this record">记录日志</li>
+            <li class="third">第三方接口请求日志</li>
+                <li class="error">异常信息日志</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote quoteBox">
+                    <form class="layui-form">
+                        <div class="layui-inline">
+                            <div class="layui-btn logScreen">
+                                <i class="iconfont icon-shaixuan"></i>
+                                <span>筛选</span>
+                            </div>
+                        </div>
+                        <div class="logScreen-wrapper chooseBox">
+                            <div class="wrapper">
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-ip">IP地址</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input ordIp" placeholder="请输入IP地址">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-interface">请求接口</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input ordUrl" placeholder="请输入请求接口">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-logTime">请求时间</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input logTime" id="logTime" placeholder="请选择时间范围">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-ordType">请求类型</div>
+                                    <div class="layui-col-md9">
+                                        <select name="ordType" lay-filter="ordType" class="ordType">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="screenBtn">
+                                    <a class="layui-btn log_btn">搜索</a>
+                                    <a class="layui-btn logReset">重置</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </blockquote>
+                <!--记录日志-->
+                <table id="recordLog" lay-filter="recordLog"></table>
+            </div>
+            <div class="layui-tab-item">
+                <blockquote class="layui-elem-quote quoteBox">
+                    <form class="layui-form">
+                        <div class="layui-inline">
+                            <div class="layui-btn thirdLogScreen">
+                                <i class="iconfont icon-shaixuan"></i>
+                                <span>筛选</span>
+                            </div>
+                        </div>
+                        <div class="thirdLogScreen-wrapper chooseBox">
+                            <div class="wrapper">
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-thirdInterface">请求接口</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input httpUrl" placeholder="请输入接口地址">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-thirdStatus">状态码</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input httpCode" placeholder="请输入状态码">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-thridRequest">请求时间</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input" id="httpRequestTime" placeholder="请选择时间范围">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-thirdResponse">返回时间</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input" id="httpResponseTime" placeholder="请选择时间范围">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-service">服务商</div>
+                                    <div class="layui-col-md9">
+                                        <select name="httpType" lay-filter="httpType" class="httpType">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="screenBtn">
+                                    <a class="layui-btn thirdLog_btn">搜索</a>
+                                    <a class="layui-btn thirdReset">重置</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </blockquote>
+                <!--第三方接口请求日志-->
+                <table id="thirdLog" lay-filter="thirdLog"></table>
+            </div>
+            <div class="layui-tab-item">
+                <blockquote class="layui-elem-quote quoteBox">
+                    <form class="layui-form">
+                        <div class="layui-inline">
+                            <div class="layui-btn errorLogScreen">
+                                <i class="iconfont icon-shaixuan"></i>
+                                <span>筛选</span>
+                            </div>
+                        </div>
+                        <div class="errorLogScreen-wrapper chooseBox">
+                            <div class="wrapper">
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-errorInterface">请求接口</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input logUrl" placeholder="请输入请求接口">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-errorInterfaceName">接口名称</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input logName" placeholder="请输入接口名称">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-errorRequestTime">请求时间</div>
+                                    <div class="layui-col-md9">
+                                        <input type="text" class="layui-input" id="errorLogtTime" placeholder="请选择时间范围">
+                                    </div>
+                                </div>
+                                <div class="layui-row row">
+                                    <div class="layui-col-md3 screen-errorType">类型</div>
+                                    <div class="layui-col-md9">
+                                        <select name="logType" lay-filter="logType" class="logType">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="screenBtn">
+                                    <a class="layui-btn errorLog_btn">搜索</a>
+                                    <a class="layui-btn errorReset">重置</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </blockquote>
+                <!--异常信息日志-->
+                <table id="errorLog" lay-filter="errorLog"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/system_setup/log/log.js"></script>
+</body>
+</html>

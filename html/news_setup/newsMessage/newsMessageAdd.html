@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>资讯信息</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div class="magb15 layui-col-md4">
+        <label class="layui-form-label">
+            <span class="classify">资讯分类</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <select name="newsCategoryId" lay-filter="newsCategoryId" class="newsCategoryId" lay-verify="required">
+
+
+            </select>
+        </div>
+    </div>
+    <div class="layui-col-md4">
+        <label class="layui-form-label">
+            <span class="pageView">转发量</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="number" class="layui-input newsShareCount num-hook" name="newsShareCount"
+                   lay-verify="required|integer|rt" placeholder="请输入转发量">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label">
+            <span class="title1">软文标题</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input newsTitle" name="newsTitle" lay-verify="required"
+                   placeholder="请输入软文标题">
+        </div>
+    </div>
+    <div class="layui-col-md4">
+        <label class="layui-form-label">
+            <span class="point">浏览量</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="number" class="layui-input newsPageView num-hook" name="newsPageView"
+                   lay-verify="required|integer" placeholder="请输入浏览量">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label">
+            <span class="share">点赞量</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="number" class="layui-input newsPointNumber num-hook" name="newsPointNumber"
+                   lay-verify="required|integer|equal" placeholder="请输入点赞量">
+        </div>
+    </div>
+    <div class="layui-col-md4">
+        <label class="layui-form-label">
+            <span class="author">作者</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input newsEditor" name="newsEditor" lay-verify="required"
+                   placeholder="请输入作者">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label enable">是否启用</label>
+        <div class="layui-input-block newsStatus">
+        </div>
+    </div>
+    <div class="magb15 layui-col-md3">
+        <label class="layui-form-label setTop">是否置顶</label>
+        <div class="layui-input-block newsIsTop">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md4">
+        <label class="layui-form-label type">模板类型</label>
+        <div class="layui-input-block">
+            <select name="newsModelType" lay-filter="newsModelType" class="newsModelType" lay-verify="required">
+
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">
+            <span class="setUp">标签设置</span>
+            <span class="layui-badge-dot"></span>
+        </label>
+
+        <div class="tagBox layui-input-block">
+            <ul class="tagList">
+
+            </ul>
+            <div class="memAdd layui-icon">&#xe654;</div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md8">
+        <label class="layui-form-label desc">资讯摘要</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea newsDescription"></textarea>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item isBreviary">
+        <label class="layui-form-label media">
+            <span>媒体文件</span>
+            <i class="layui-badge-dot"></i>
+        </label>
+        <div class="layui-inline">
+            <div class="layui-upload-drag uploadImg" id="uploadBreviary">
+                <div class="upload-wrapper">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+                <div class="showImg">
+                    <img src="" height="100%">
+                    <div class="layui-icon closeImg">&#xe640;</div>
+                </div>
+            </div>
+        </div>
+        <div class="uploadImgSize layui-inline">文件最佳尺寸为 <b>250 * 250</b>像素</div>
+    </div>
+
+    <div class="layui-form-item isBanner">
+        <label class="layui-form-label media">
+            <span>媒体文件</span>
+            <i class="layui-badge-dot"></i>
+        </label>
+        <div class="layui-inline">
+            <div class="layui-upload-drag uploadImg" id="uploadBanner">
+                <div class="upload-wrapper">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+                <div class="showImg">
+                    <img src="" height="100%">
+                    <div class="layui-icon closeImg">&#xe640;</div>
+                </div>
+            </div>
+        </div>
+        <div class="uploadImgSize layui-inline">文件最佳尺寸为 <b>690 * 310</b>像素</div>
+    </div>
+
+    <div class="layui-form-item isVideo">
+        <label class="layui-form-label media">
+            <span>媒体文件</span>
+            <i class="layui-badge-dot"></i>
+        </label>
+        <div class="layui-inline">
+            <div class="layui-upload-drag uploadImg" id="uploadVideo">
+                <div class="upload-wrapper">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+                <div class="showImg">
+                    <video controls src="" width="100%" height="100%"></video>
+                    <div class="layui-icon closeImg">&#xe640;</div>
+                </div>
+                <div class="progress-wrapper">
+                    <i class="percent">0%</i>
+                    <div class="progress"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="magb15 layui-form-item layui-col-md8">
+        <label class="layui-form-label details">资讯详情</label>
+        <div class="layui-input-block" id="newsDetail">
+            <script id="editor" type="text/plain"></script>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-row layui-col-xs12 see">
+        <div class="layui-input-block">
+            <button class="layui-btn submit" lay-submit lay-filter="addOrEdit">提交</button>
+            <button class="layui-btn reset" type="reset">重置</button>
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/language.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../ueditor/ueditor.config.js"></script>
+<script src="../../../ueditor/ueditor.all.js"></script>
+<script src="../../../ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="../../../js/news_setup/newsMessage/newsMessageAdd.js"></script>
+<script src="../../../js/common/ueurl.js"></script>
+</body>
+</html>

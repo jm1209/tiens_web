@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>员工管理</title>
+	<link rel="stylesheet" href="../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="magb15 layui-col-md4">
+            <label class="layui-form-label">
+                <i id="role">角色</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <select disabled name="roleIds" lay-filter="roleIds" class="roleIds" lay-verify="required">
+                    <option value="">请选择角色</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item ">
+            <label class="layui-form-label">
+                <i id="name">姓名</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="text" class="layui-input empName" name="empName" lay-verify="required" placeholder="请输入姓名">
+            </div>
+        </div>
+        <div class="layui-form-item ">
+            <label class="layui-form-label">
+                <i id="account">账号</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="text"  class="layui-input empAccount" name="empAccount" lay-verify="required" placeholder="请输入账号">
+            </div>
+        </div>
+        <div class="layui-form-item ">
+            <label class="layui-form-label">
+                <i id="phone">联系电话</i>
+                <span class="layui-badge-dot"></span>
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="text" class="layui-input empPhone" lay-verify="required" name="empPhone" lay-verify="contact" placeholder="请输入手机号">
+            </div>
+        </div>
+        <div class="layui-form-item layui-row ">
+            <label class="layui-form-label">
+                <i id="sort">排序</i>
+            </label>
+            <div class="layui-input-block">
+                <input disabled type="number" class="layui-input empSeq" name="empSeq"  placeholder="请输入排序">
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="magb15 layui-col-md4" style="position: relative">
+                <label class="layui-form-label" id="state">状态</label>
+                <div class="layui-input-block empStatus">
+                    <input disabled type="radio" name="empStatus" value="1" title="有效" checked>
+                    <input disabled type="radio" name="empStatus" value="0" title="无效">
+                </div>
+                <div style="position: absolute;width: 100%;height: 100%;top: 0"></div>
+            </div>
+
+            <div class="magb15 layui-col-md4 ">
+                <label class="layui-form-label" id="desc">描述</label>
+                <div class="layui-input-block">
+                    <textarea disabled placeholder="请输入描述" class="layui-textarea empDesc" name="empDesc"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/system_setup/employee/empAdd.js"></script>
+</body>
+</html>

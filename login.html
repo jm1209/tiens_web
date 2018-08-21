@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+    <title>天狮集团</title>
+    <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/public.css"/>
+</head>
+<body class="loginBody">
+<div class="logo"><img src="images/logo.png"></div>
+
+<form class="layui-form">
+    <div class="login_face"><img src="images/face.png" class="userAvatar"></div>
+    <div class="layui-form-item input-item">
+        <label for="loginAccount" id="account">账号</label>
+        <input type="text" placeholder="请输入账号" id="loginAccount" name="loginAccount" class="layui-input" lay-verify="loginAccount">
+    </div>
+    <div class="layui-form-item input-item">
+        <label for="password" id="pwd">密码</label>
+        <input type="password" placeholder="请输入密码" id="password" name="password" class="layui-input" lay-verify="password">
+    </div>
+    <div class="layui-form-item input-item" id="imgCode">
+        <label for="code" id="codeTxt">验证码</label>
+        <input type="text" placeholder="请输入验证码" id="code" class="layui-input" lay-verify="required">
+        <img src="images/code.jpg" height="36" id="codeClick">
+    </div>
+
+    <p class="retrieve"><a href="retrieve.html">找回密码?</a></p>
+    <div class="layui-form-item mtop30">
+        <a class="layui-btn layui-block login">登录</a>
+    </div>
+</form>
+
+<script src="layui/layui.js"></script>
+<script src="js/common/minicolors.min.js"></script>
+<script src="js/common/language.js"></script>
+<script src="js/common/base.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

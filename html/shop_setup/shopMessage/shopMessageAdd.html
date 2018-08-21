@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>店铺信息</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../css/public.css" />
+</head>
+<body class="childrenBody">
+    <input type="hidden" class="sign"/>
+    <form class="layui-form">
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label isenabled">
+                <span>是否启用</span>
+            </label>
+            <div class="layui-input-block shopStatus">
+
+            </div>
+        </div>
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label shopname">
+                <span>店铺名称</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopName" name="shopName" lay-verify="required" placeholder="请输入店铺名称">
+            </div>
+        </div>
+
+        <div class="layui-col-md4">
+            <label class="layui-form-label jingweidu">
+                <span>经纬度</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="latAndLon" name="latAndLon" lay-verify="required" placeholder="点击获取经纬度">
+            </div>
+        </div>
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label phone">
+                <span>联系电话</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopMobile" name="shopMobile" lay-verify="telephone" placeholder="请输入联系电话">
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <label class="layui-form-label shopadress">
+                <span>联系地址</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input shopAddress" name="shopAddress" lay-verify="required" placeholder="请输入联系地址">
+            </div>
+        </div>
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label shoppageview">
+                <span>浏览量</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="number" class="layui-input shopPageView num-hook" name="shopPageView" lay-verify="required" placeholder="请输入浏览量">
+            </div>
+        </div>
+        <div class="magb15 layui-col-md4 see">
+            <label class="layui-form-label pointnumber">
+                <span>点赞量</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="number" class="layui-input shopPointNumber num-hook" name="shopPointNumber" lay-verify="required|equal" placeholder="请输入点赞量">
+            </div>
+        </div>
+        <div class="layui-form-item layui-col-md4">
+            <label class="layui-form-label sharecount">
+                <span>转发量</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block">
+                <input type="number" class="layui-input shopShareCount num-hook" name="shopShareCount" lay-verify="required|rt" placeholder="请输入转发量">
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <label class="layui-form-label salltime">
+                <span>营业时间</span>
+            </label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="shopBusinessHour" placeholder="营业时间">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label shoplogo">
+                    <span>店铺logo</span>
+                    <i class="layui-badge-dot"></i>
+                </label>
+                <div class="layui-inline">
+                    <div class="layui-upload-drag uploadImg" id="uploadImg">
+                        <div class="upload-wrapper">
+                            <i class="layui-icon"></i>
+                            <p>点击上传，或将文件拖拽到此处</p>
+                        </div>
+                        <div class="showImg">
+                            <img src="" width="100" height="100">
+                            <div class="layui-icon closeImg">&#xe640;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uploadImgSize layui-inline">图片最佳尺寸为 <b>200 * 200</b>像素</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label qrcode">
+                    <span>二维码</span>
+                    <i class="layui-badge-dot"></i>
+                </label>
+                <div class="layui-inline">
+                    <div class="layui-upload-drag uploadImg" id="ewmImg">
+                        <div class="ewm-wrapper">
+                            <i class="layui-icon"></i>
+                            <p>点击上传，或将文件拖拽到此处</p>
+                        </div>
+                        <div class="ewmImg">
+                            <img src="" width="100" height="100">
+                            <div class="layui-icon closeEwmImg">&#xe640;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uploadImgSize layui-inline">图片最佳尺寸为 <b>200 * 200</b>像素</div>
+            </div>
+        </div>
+        <div class="layui-upload">
+            <label class="layui-form-label shopimage">
+                <span>店铺图片</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <button type="button" class="layui-btn" id="shopImage">多图片上传</button>
+            <div class="layui-input-block">
+                <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+                    <span class="view">预览图：</span>
+                    <div class="layui-upload-list" id="shopList">
+
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+        <div class="magb15 layui-form-item layui-col-md8">
+            <label class="layui-form-label details">
+                <span>店铺详情</span>
+                <i class="layui-badge-dot"></i>
+            </label>
+            <div class="layui-input-block" id="shopDetail">
+                <script id="editor" type="text/plain"></script>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-row layui-col-xs12 seeBtn">
+            <div class="layui-input-block">
+                <button class="layui-btn submit" lay-submit lay-filter="addOrEdit">提交</button>
+                <button class="layui-btn reset" type="reset">重置</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/language.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../ueditor/ueditor.config.js"></script>
+    <script src="../../../ueditor/ueditor.all.js"></script>
+    <script src="../../../ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="../../../js/shop_setup/shopMessage/shopMessageAdd.js"></script>
+    <script src="../../../js/common/ueurl.js"></script>
+</body>
+</html>
